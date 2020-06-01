@@ -27,3 +27,9 @@
 
 # Moshi
 -keep @com.squareup.moshi.JsonClass class * { *; }
+
+# http://github.com/Kotlin/kotlinx.coroutines/issues/2046 - May 21, 2020
+-dontwarn java.lang.instrument.ClassFileTransformer
+-dontwarn sun.misc.SignalHandler
+-dontwarn java.lang.instrument.Instrumentation
+-dontwarn sun.misc.Signal
