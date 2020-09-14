@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship.i18n
 
 import it.scoppelletti.spaceship.types.CurrencyConverter
@@ -39,7 +37,7 @@ public interface I18NProvider {
      *
      * @return The object.
      */
-    fun currentLocale(): Locale
+    public fun currentLocale(): Locale
 
     /**
      * Returns the converter between decimal numbers and strings.
@@ -49,7 +47,7 @@ public interface I18NProvider {
      * @param  groupingUsed   Whether grouping will be used in the converter.
      * @return                The object.
      */
-    fun decimalConverter(
+    public fun decimalConverter(
             fractionDigits: Int? = null,
             groupingUsed: Boolean? = null
     ): DecimalConverter = DefaultDecimalConverter(fractionDigits, groupingUsed,
@@ -64,7 +62,7 @@ public interface I18NProvider {
      * @return                The object.
      */
     @Suppress("unused")
-    fun currencyConverter(
+    public fun currencyConverter(
             fractionDigits: Int? = null,
             groupingUsed: Boolean? = null
     ): CurrencyConverter = DefaultCurrencyConverter(fractionDigits,
@@ -75,14 +73,14 @@ public interface I18NProvider {
      *
      * @return The object.
      */
-    fun currentZoneId(): ZoneId
+    public fun currentZoneId(): ZoneId
 
     /**
      * Returns the converter between dates and strings.
      *
      * @return The object.
      */
-    fun dateConverter(): DateConverter
+    public fun dateConverter(): DateConverter
 
     /**
      * Returns the converter between times and strings.
@@ -90,5 +88,5 @@ public interface I18NProvider {
      * @param  secs Whether the seconds field is enabled.
      * @return      The object.
      */
-    fun timeConverter(secs: Boolean): TimeConverter
+    public fun timeConverter(secs: Boolean): TimeConverter
 }

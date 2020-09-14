@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship.types
 
 /**
@@ -28,7 +26,7 @@ public object StringExt {
     /**
      * Empty string.
      */
-    public const val EMPTY = ""
+    public const val EMPTY: String = ""
 }
 
 /**
@@ -38,4 +36,4 @@ public object StringExt {
  * @return   Resulting string.
  * @since    1.0.0
  */
-public fun String.joinLines() = this.replace('\n', ' ')
+public fun String.joinLines(): String = this.replace('\n', ' ')

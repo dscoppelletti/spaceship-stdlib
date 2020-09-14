@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship.types
 
 import org.threeten.bp.LocalDate
@@ -34,7 +32,7 @@ public interface DateConverter {
      * @param  value Date.
      * @return       Corresponding string.
      */
-    fun format(value: LocalDate?): String?
+    public fun format(value: LocalDate?): String?
 
     /**
      * Parses a string as a date.
@@ -43,12 +41,12 @@ public interface DateConverter {
      * @return      Resulting date.
      */
     @Throws(DateTimeParseException::class)
-    fun parse(text: String?): LocalDate?
+    public fun parse(text: String?): LocalDate?
 
     /**
      * Returns the pattern for formatting dates.
      *
      * @return User notation of the pattern.
      */
-    fun pattern(): String
+    public fun pattern(): String
 }

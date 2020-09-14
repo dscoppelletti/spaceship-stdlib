@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship.types
 
 import org.threeten.bp.LocalTime
@@ -34,7 +32,7 @@ public interface TimeConverter {
      * @param  value Time.
      * @return       Corresponding string.
      */
-    fun format(value: LocalTime?): String?
+    public fun format(value: LocalTime?): String?
 
     /**
      * Parses a string as a time.
@@ -43,12 +41,12 @@ public interface TimeConverter {
      * @return      Resulting time.
      */
     @Throws(DateTimeParseException::class)
-    fun parse(text: String?): LocalTime?
+    public fun parse(text: String?): LocalTime?
 
     /**
      * Returns the pattern for formatting times.
      *
      * @return User notation of the pattern.
      */
-    fun pattern(): String
+    public fun pattern(): String
 }

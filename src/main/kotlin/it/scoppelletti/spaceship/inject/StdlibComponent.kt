@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier", "unused")
+@file:Suppress("unused")
 
 package it.scoppelletti.spaceship.inject
 
@@ -28,9 +28,9 @@ import it.scoppelletti.spaceship.i18n.I18NProvider
  */
 public interface StdlibComponent {
 
-    fun exceptionLogger(): ExceptionLogger
+    public fun exceptionLogger(): ExceptionLogger
 
-    fun i18nProvider(): I18NProvider
+    public fun i18nProvider(): I18NProvider
 }
 
 /**
@@ -40,5 +40,5 @@ public interface StdlibComponent {
  */
 public interface StdlibComponentProvider {
 
-    fun stdlibComponent(): StdlibComponent
+    public fun stdlibComponent(): StdlibComponent
 }

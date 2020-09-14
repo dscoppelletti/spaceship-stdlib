@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier", "unused")
+@file:Suppress("unused")
 
 package it.scoppelletti.spaceship.io
 
@@ -34,5 +34,5 @@ import java.io.File
  */
 public interface IOProvider {
 
-    val noBackupFilesDir: File
+    public val noBackupFilesDir: File
 }

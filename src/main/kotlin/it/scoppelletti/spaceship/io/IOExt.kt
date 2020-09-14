@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantExplicitType", "RedundantVisibilityModifier", "unused")
+@file:Suppress("unused")
 
 package it.scoppelletti.spaceship.io
 
@@ -38,7 +38,7 @@ public object IOExt {
     /**
      * Separator between the base name and the extension in a file name.
      */
-    public const val EXT_SEPARATOR = '.'
+    public const val EXT_SEPARATOR: Char = '.'
 }
 
 /**
@@ -71,11 +71,12 @@ public fun <T : Closeable> T.closeQuietly(): T? {
  * @since         1.0.0
  */
 @Throws(IOException::class)
+@Suppress("BlockingMethodInNonBlockingContext")
 public suspend fun copy(
         source: Source,
         sink: Sink,
         bufSize: Long = DEFAULT_BUFFER_SIZE.toLong()
-) = withContext(Dispatchers.IO) {
+): Unit = withContext(Dispatchers.IO) {
     var n: Long
     val buf = Buffer()
 

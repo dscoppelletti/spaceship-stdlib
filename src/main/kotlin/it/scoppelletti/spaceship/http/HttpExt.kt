@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier", "unused")
+@file:Suppress("unused")
 
 package it.scoppelletti.spaceship.http
 
@@ -28,56 +28,57 @@ public object HttpExt {
     /**
      * Authorization type `Bearer`.
      */
-    public const val AUTH_BEARER = "Bearer"
+    public const val AUTH_BEARER: String = "Bearer"
 
     /**
      * Sets the header `Content-Type` to the media-type `application/json`.
      */
-    public const val CONSUMES_JSON = "Content-Type: application/json"
+    public const val CONSUMES_JSON: String = "Content-Type: application/json"
 
     /**
      * Name of the `Interceptor` dependency that decorates an HTTP request with
      * infos describing the client.
      */
-    public const val DEP_CLIENTINTERCEPTOR = "it.scoppelletti.spaceship.http.1"
+    public const val DEP_CLIENTINTERCEPTOR: String =
+            "it.scoppelletti.spaceship.http.1"
 
     /**
      * Header containing the client application name and version.
      */
-    public const val HEADER_APPL = "X-scoppelletti-appl"
+    public const val HEADER_APPL: String = "scoppelletti-appl"
 
     /**
      * Header `Authorization`.
      */
-    public const val HEADER_AUTH = "Authorization"
+    public const val HEADER_AUTH: String = "Authorization"
 
     /**
      * Header `Accept-Language`.
      */
-    public const val HEADER_LOCALE = "Accept-Language"
+    public const val HEADER_LOCALE: String = "Accept-Language"
 
     /**
      * Header containing the client OS name and version.
      */
-    public const val HEADER_OS = "X-scoppelletti-os"
+    public const val HEADER_OS: String = "scoppelletti-os"
 
     /**
      * Sets the header `Accept` to the media-type `application/json`.
      */
-    public const val PRODUCES_JSON = "Accept: application/json"
+    public const val PRODUCES_JSON: String = "Accept: application/json"
 
     /**
      * HTTP status Unauthorized.
      */
-    public const val STATUS_UNAUTHORIZED = 401
+    public const val STATUS_UNAUTHORIZED: Int = 401
 
     /**
      * HTTP status Forbidden.
      */
-    public const val STATUS_FORBIDDEN = 403
+    public const val STATUS_FORBIDDEN: Int = 403
 
     /**
      * HTTP status Not Found.
      */
-    public const val STATUS_NOTFOUND = 404
+    public const val STATUS_NOTFOUND: Int = 404
 }

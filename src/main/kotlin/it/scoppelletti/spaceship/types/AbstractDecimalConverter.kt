@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("JoinDeclarationAndAssignment", "RedundantVisibilityModifier")
+@file:Suppress("JoinDeclarationAndAssignment")
 
 package it.scoppelletti.spaceship.types
 

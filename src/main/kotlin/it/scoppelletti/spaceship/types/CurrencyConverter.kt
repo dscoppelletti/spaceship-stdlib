@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship.types
 
 /**
@@ -27,6 +25,6 @@ package it.scoppelletti.spaceship.types
  */
 public interface CurrencyConverter : DecimalConverter {
 
-    val currencySymbol: String
+    public val currencySymbol: String
 }
 

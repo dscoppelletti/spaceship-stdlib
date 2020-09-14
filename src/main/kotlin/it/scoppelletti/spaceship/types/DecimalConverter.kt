@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship.types
 
 import java.math.BigDecimal
@@ -33,8 +31,8 @@ import java.text.ParseException
  */
 public interface DecimalConverter {
 
-    val fractionDigits: Int
-    val roundingMode: RoundingMode
+    public val fractionDigits: Int
+    public val roundingMode: RoundingMode
 
     /**
      * Formats a number as a string.
@@ -42,7 +40,7 @@ public interface DecimalConverter {
      * @param  value Number.
      * @return       Corresponding string.
      */
-    fun format(value: BigDecimal?): String?
+    public fun format(value: BigDecimal?): String?
 
     /**
      * Parses a string as a number.
@@ -51,5 +49,5 @@ public interface DecimalConverter {
      * @return      Resulting number.
      */
     @Throws(ParseException::class)
-    fun parse(text: String?): BigDecimal?
+    public fun parse(text: String?): BigDecimal?
 }

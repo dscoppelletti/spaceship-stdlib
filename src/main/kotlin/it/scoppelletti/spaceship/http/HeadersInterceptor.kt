@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("JoinDeclarationAndAssignment", "RedundantVisibilityModifier",
-        "unused")
+@file:Suppress("JoinDeclarationAndAssignment", "unused")
 
 package it.scoppelletti.spaceship.http
 

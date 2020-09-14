@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship
 
 /**
@@ -29,11 +27,13 @@ public object StdlibExt {
     /**
      * Name of the main `CoroutineDispatcher` dependency.
      */
-    public const val DEP_MAINDISPATCHER = "it.scoppelletti.spaceship.stdlib.1"
+    public const val DEP_MAINDISPATCHER: String =
+            "it.scoppelletti.spaceship.stdlib.1"
 
     /**
      * Name of the `Clock` dependency for accessing to the current instant,
      * converting to date and time using the UTC time-zone.
      */
-    public const val DEP_UTCCLOCK = "it.scoppelletti.spaceship.stdlib.2"
+    public const val DEP_UTCCLOCK: String =
+            "it.scoppelletti.spaceship.stdlib.2"
 }

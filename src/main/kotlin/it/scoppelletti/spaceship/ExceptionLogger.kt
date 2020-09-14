@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier")
-
 package it.scoppelletti.spaceship
 
 /**
@@ -30,7 +28,7 @@ public interface ExceptionLogger {
      *
      * @param ex Exception.
      */
-    fun log(ex: Throwable)
+    public fun log(ex: Throwable)
 }
 
 /**
@@ -47,5 +45,5 @@ public interface ExceptionLoggerHandler<in T: Throwable> {
      *
      * @param ex Exception.
      */
-    fun log(ex: T)
+    public fun log(ex: T)
 }

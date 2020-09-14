@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("RedundantVisibilityModifier", "unused")
+@file:Suppress("unused")
 
 package it.scoppelletti.spaceship.i18n
 
@@ -31,5 +31,5 @@ public interface MessageSpec {
      * @param  i18nProvider Provides I18N dependencies.
      * @return              String.
      */
-    fun buildMessage(i18nProvider: I18NProvider): String
+    public fun buildMessage(i18nProvider: I18NProvider): String
 }
