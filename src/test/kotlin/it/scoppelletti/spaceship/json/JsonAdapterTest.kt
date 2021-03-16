@@ -1,3 +1,5 @@
+@file:Suppress("JoinDeclarationAndAssignment")
+
 package it.scoppelletti.spaceship.json
 
 import com.squareup.moshi.JsonAdapter

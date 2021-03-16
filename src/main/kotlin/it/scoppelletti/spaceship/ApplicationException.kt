@@ -36,6 +36,7 @@ public class ApplicationException constructor(
         override val cause: Throwable? = null
 ) : RuntimeException() {
 
+    @Suppress("RedundantNullableReturnType")
     override val message: String?
         get() = toString()
 

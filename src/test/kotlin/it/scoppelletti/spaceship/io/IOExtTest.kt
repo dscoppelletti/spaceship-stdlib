@@ -2,6 +2,7 @@ package it.scoppelletti.spaceship.io
 
 import kotlinx.coroutines.runBlocking
 import okio.Okio
+import java.io.File
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -20,7 +21,7 @@ class IOExtTest {
     @Test
     @Suppress("BlockingMethodInNonBlockingContext")
     fun copy() = runBlocking {
-        val file1 = createTempFile()
+        val file1 = File.createTempFile("src", ".tmp")
         val sink1 = Okio.sink(file1)
         val bufSink = Okio.buffer(sink1)
 
@@ -28,7 +29,7 @@ class IOExtTest {
         bufSink.close()
 
         val source1 = Okio.source(file1)
-        val file2 = createTempFile()
+        val file2 = File.createTempFile("dst", ".tmp")
         val sink2 = Okio.sink(file2)
 
         copy(source1, sink2)
