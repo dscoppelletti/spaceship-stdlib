@@ -8,6 +8,10 @@ Spaceship Standard Library.
 
 Provides common utility classes.
 
+# Package it.scoppelletti.spaceship.content
+
+Contains classes for accessing and publishing data on a device.
+
 # Package it.scoppelletti.spaceship.http
 
 Classes that help with HTTP network access.

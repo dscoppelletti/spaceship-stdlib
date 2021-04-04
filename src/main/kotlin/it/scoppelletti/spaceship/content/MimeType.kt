@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Dario Scoppelletti, <http://www.scoppelletti.it/>.
+ * Copyright (C) 2021 Dario Scoppelletti, <http://www.scoppelletti.it/>.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,32 @@
 
 @file:Suppress("unused")
 
-package it.scoppelletti.spaceship.http
+package it.scoppelletti.spaceship.content
 
 /**
- * Operations for HTTP protocol.
+ * MIME types.
  *
  * @since 1.0.0
  */
-public object HttpExt {
+public object MimeType {
 
     /**
-     * Name of the `Interceptor` dependency that decorates an HTTP request with
-     * infos describing the client.
+     * `image&#47;*`
      */
-    public const val DEP_CLIENTINTERCEPTOR: String =
-            "it.scoppelletti.spaceship.http.1"
+    public const val IMAGE: String = "image/*"
+
+    /**
+     * `text/plain`
+     */
+    public const val TEXT_PLAIN: String = "text/plain"
+
+    /**
+     * `application/octet-stream`
+     */
+    public const val STREAM: String = "application/octet-stream"
+
+    /**
+     * `video&#47;*`
+     */
+    public const val VIDEO: String = "video/*"
 }

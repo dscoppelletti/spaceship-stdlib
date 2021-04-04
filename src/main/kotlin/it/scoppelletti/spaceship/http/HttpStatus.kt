@@ -18,17 +18,20 @@
 
 package it.scoppelletti.spaceship.http
 
-/**
- * Operations for HTTP protocol.
- *
- * @since 1.0.0
- */
-public object HttpExt {
+public object HttpStatus {
 
     /**
-     * Name of the `Interceptor` dependency that decorates an HTTP request with
-     * infos describing the client.
+     * Unauthorized.
      */
-    public const val DEP_CLIENTINTERCEPTOR: String =
-            "it.scoppelletti.spaceship.http.1"
+    public const val UNAUTHORIZED: Int = 401
+
+    /**
+     * Forbidden.
+     */
+    public const val FORBIDDEN: Int = 403
+
+    /**
+     * Not Found.
+     */
+    public const val NOTFOUND: Int = 404
 }

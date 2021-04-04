@@ -19,16 +19,19 @@
 package it.scoppelletti.spaceship.http
 
 /**
- * Operations for HTTP protocol.
+ * Http schemes.
  *
  * @since 1.0.0
  */
-public object HttpExt {
+public object HttpScheme {
 
     /**
-     * Name of the `Interceptor` dependency that decorates an HTTP request with
-     * infos describing the client.
+     * HTTP.
      */
-    public const val DEP_CLIENTINTERCEPTOR: String =
-            "it.scoppelletti.spaceship.http.1"
+    public const val HTTP: String = "http"
+
+    /**
+     * HTTPS.
+     */
+    public const val HTTPS: String = "https"
 }
