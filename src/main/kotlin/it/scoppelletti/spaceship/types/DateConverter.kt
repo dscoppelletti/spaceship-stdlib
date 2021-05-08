@@ -16,8 +16,8 @@
 
 package it.scoppelletti.spaceship.types
 
-import org.threeten.bp.LocalDate
-import org.threeten.bp.format.DateTimeParseException
+import java.time.LocalDate
+import java.time.format.DateTimeParseException
 
 /**
  * Conversion between dates and strings.

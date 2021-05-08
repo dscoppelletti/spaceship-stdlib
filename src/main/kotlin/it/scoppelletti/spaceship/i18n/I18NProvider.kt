@@ -22,7 +22,7 @@ import it.scoppelletti.spaceship.types.DecimalConverter
 import it.scoppelletti.spaceship.types.DefaultCurrencyConverter
 import it.scoppelletti.spaceship.types.DefaultDecimalConverter
 import it.scoppelletti.spaceship.types.TimeConverter
-import org.threeten.bp.ZoneId
+import java.time.ZoneId
 import java.util.Locale
 
 /**

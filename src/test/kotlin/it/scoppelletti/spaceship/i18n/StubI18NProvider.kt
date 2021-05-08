@@ -4,7 +4,7 @@ import it.scoppelletti.spaceship.types.DateConverter
 import it.scoppelletti.spaceship.types.StubTimeConverter
 import it.scoppelletti.spaceship.types.StubDateConverter
 import it.scoppelletti.spaceship.types.TimeConverter
-import org.threeten.bp.ZoneId
+import java.time.ZoneId
 import java.util.Locale
 
 class StubI18NProvider(

@@ -5,7 +5,6 @@ buildscript {
 
     repositories {
         mavenCentral()
-        jcenter()
 
         if (project.hasProperty('it.scoppelletti.tools.devRepoUrl')) {
             maven {
@@ -57,7 +56,6 @@ spaceship {
 
 repositories {
     mavenCentral()
-    jcenter()
 
     if (project.hasProperty('it.scoppelletti.tools.devRepoUrl')) {
         maven {
@@ -82,7 +80,6 @@ dependencies {
     api 'com.squareup.okio:okio'
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}"
     api 'org.jetbrains.kotlinx:kotlinx-coroutines-core'
-    api 'org.threeten:threetenbp::no-tzdb'
     implementation 'io.github.microutils:kotlin-logging'
     implementation 'org.slf4j:slf4j-api'
     kaptTest 'com.squareup.moshi:moshi-kotlin-codegen'

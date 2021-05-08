@@ -17,11 +17,11 @@
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.I18NProvider
-import org.threeten.bp.LocalTime
-import org.threeten.bp.format.DateTimeFormatter
-import org.threeten.bp.format.DateTimeFormatterBuilder
-import org.threeten.bp.format.SignStyle
-import org.threeten.bp.temporal.ChronoField
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
+import java.time.format.DateTimeFormatterBuilder
+import java.time.format.SignStyle
+import java.time.temporal.ChronoField
 
 private const val TIME_SEP = ':'
 

@@ -1,7 +1,7 @@
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.I18NProvider
-import org.threeten.bp.temporal.ChronoField
+import java.time.temporal.ChronoField
 
 class StubDateConverter(
         i18nProvider: I18NProvider

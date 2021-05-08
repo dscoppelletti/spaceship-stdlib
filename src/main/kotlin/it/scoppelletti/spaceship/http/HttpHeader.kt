@@ -51,6 +51,11 @@ public object HttpHeader {
     public const val OS: String = "scoppelletti-os"
 
     /**
+     * Header containing the client timezone.
+     */
+    public const val TIMEZONE: String = "scoppelletti-Timezone-IANA"
+
+    /**
      * Sets the header `Content-Type` to the media-type `application/json`.
      */
     public const val CONSUMES_JSON: String = "Content-Type: application/json"

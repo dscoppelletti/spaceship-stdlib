@@ -3,8 +3,8 @@
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.StubI18NProvider
-import org.threeten.bp.LocalDate
-import org.threeten.bp.format.DateTimeParseException
+import java.time.LocalDate
+import java.time.format.DateTimeParseException
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
