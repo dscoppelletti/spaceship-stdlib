@@ -1,7 +1,7 @@
 
 buildscript {
     ext.BOM = 'it.scoppelletti.spaceship:spaceship-bom:1.0.0'
-    ext.kotlin_version = '1.4.32'
+    ext.kotlin_version = '1.5.21'
 
     repositories {
         mavenCentral()
@@ -42,10 +42,16 @@ kotlin {
     explicitApi()
 }
 compileKotlin {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
 }
 
 spaceship {
@@ -56,6 +62,7 @@ spaceship {
 
 repositories {
     mavenCentral()
+    google()
 
     if (project.hasProperty('it.scoppelletti.tools.devRepoUrl')) {
         maven {

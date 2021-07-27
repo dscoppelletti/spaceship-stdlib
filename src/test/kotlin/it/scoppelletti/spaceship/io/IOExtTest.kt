@@ -1,7 +1,9 @@
 package it.scoppelletti.spaceship.io
 
 import kotlinx.coroutines.runBlocking
-import okio.Okio
+import okio.buffer
+import okio.sink
+import okio.source
 import java.io.File
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -22,22 +24,22 @@ class IOExtTest {
     @Suppress("BlockingMethodInNonBlockingContext")
     fun copy() = runBlocking {
         val file1 = File.createTempFile("src", ".tmp")
-        val sink1 = Okio.sink(file1)
-        val bufSink = Okio.buffer(sink1)
+        val sink1 = file1.sink()
+        val bufSink = sink1.buffer()
 
         bufSink.writeUtf8(data)
         bufSink.close()
 
-        val source1 = Okio.source(file1)
+        val source1 = file1.source()
         val file2 = File.createTempFile("dst", ".tmp")
-        val sink2 = Okio.sink(file2)
+        val sink2 = file2.sink()
 
         copy(source1, sink2)
         source1.close()
         sink2.close()
 
-        val source2 = Okio.source(file2)
-        val bufSource = Okio.buffer(source2)
+        val source2 = file2.source()
+        val bufSource = source2.buffer()
 
         val testData = bufSource.readUtf8()
         bufSource.close()

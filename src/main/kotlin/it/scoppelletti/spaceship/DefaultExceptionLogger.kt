@@ -16,10 +16,7 @@
 
 package it.scoppelletti.spaceship
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import mu.KotlinLogging
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -39,6 +36,7 @@ public class DefaultExceptionLogger @Inject constructor(
         doLog(ex)
     }
 
+    @OptIn(DelicateCoroutinesApi::class)
     private fun doLog(ex: Throwable) = GlobalScope.launch(Dispatchers.IO) {
         handlers.forEach {
             val handler: ExceptionLoggerHandler<Throwable>
