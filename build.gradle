@@ -27,7 +27,7 @@ plugins {
 
 apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'org.jetbrains.dokka'
+// apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'it.scoppelletti.spaceship.spaceship-gradle-java'
 
 group 'it.scoppelletti.spaceship'
