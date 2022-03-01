@@ -114,10 +114,4 @@ public abstract class AbstractTimeConverter protected constructor(
 
         return builder.toFormatter(i18nProvider.currentLocale())
     }
-
-    /**
-     * Returns `true` if times should be formatted as 24 hour times, `false` if
-     * times should be formatted as 12 hour (AM/PM) times.
-     */
-    protected abstract fun is24HourFormat(): Boolean
 }

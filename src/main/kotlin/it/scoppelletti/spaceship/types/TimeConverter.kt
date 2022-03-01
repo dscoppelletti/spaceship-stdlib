@@ -49,4 +49,10 @@ public interface TimeConverter {
      * @return User notation of the pattern.
      */
     public fun pattern(): String
+
+    /**
+     * Returns `true` if times should be formatted as 24 hour times, `false` if
+     * times should be formatted as 12 hour (AM/PM) times.
+     */
+    public fun is24HourFormat(): Boolean
 }
