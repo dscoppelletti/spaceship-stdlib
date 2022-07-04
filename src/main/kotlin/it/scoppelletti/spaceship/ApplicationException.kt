@@ -19,7 +19,6 @@
 package it.scoppelletti.spaceship
 
 import it.scoppelletti.spaceship.i18n.MessageSpec
-import it.scoppelletti.spaceship.types.StringExt
 
 /**
  * Application exception.
@@ -72,10 +71,5 @@ public fun Throwable?.toMessage(): String {
         return msg
     }
 
-    msg = this.toString()
-    if (!msg.isNullOrBlank()) {
-        return msg
-    }
-
-    return StringExt.EMPTY
+    return this.toString()
 }

@@ -1,9 +1,10 @@
-
 buildscript {
-    ext.BOM = 'it.scoppelletti.spaceship:spaceship-bom:1.0.0'
     ext.kotlin_version = '1.6.10'
+    ext.KOTLIN_BOM = "org.jetbrains.kotlin:kotlin-bom:${kotlin_version}"
+    ext.SPACESHIP_BOM = 'it.scoppelletti.spaceship:spaceship-bom:1.0.0'
 
     repositories {
+        gradlePluginPortal()
         mavenCentral()
 
         if (project.hasProperty('it.scoppelletti.tools.devRepoUrl')) {
@@ -13,44 +14,49 @@ buildscript {
         }
     }
     dependencies {
-        classpath platform(BOM)
-        classpath 'com.github.ben-manes:gradle-versions-plugin'
-        classpath 'it.scoppelletti.spaceship:spaceship-gradle-java'
-        classpath 'org.jetbrains.dokka:dokka-gradle-plugin'
+        classpath platform(KOTLIN_BOM)
+        classpath platform(SPACESHIP_BOM)
+        classpath 'it.scoppelletti.spaceship:spaceship-gradle'
     }
 }
 
 plugins {
-    id 'java-library'
-    id 'org.jetbrains.kotlin.jvm' version "${kotlin_version}"
+    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'org.jetbrains.dokka' version '1.6.21'
+    id 'com.github.ben-manes.versions' version '0.42.0'
 }
 
 apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'it.scoppelletti.spaceship.java-library'
 apply plugin: 'kotlin-kapt'
-// apply plugin: 'org.jetbrains.dokka'
-apply plugin: 'it.scoppelletti.spaceship.spaceship-gradle-java'
 
 group 'it.scoppelletti.spaceship'
 version '1.0.0'
 description 'Spaceship Standard Library'
 archivesBaseName = 'spaceship-stdlib'
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 kotlin {
     explicitApi()
 }
+
 compileKotlin {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+        freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
     }
 }
+
 compileTestKotlin {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
-        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+        freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
     }
 }
 
@@ -78,20 +84,22 @@ configurations {
 }
 
 dependencies {
-    bom platform(BOM)
+    bom platform(KOTLIN_BOM)
+    bom platform(SPACESHIP_BOM)
     api 'com.google.dagger:dagger'
     kapt 'com.google.dagger:dagger-compiler'
     api 'com.squareup.moshi:moshi'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen'
     api 'com.squareup.okhttp3:okhttp'
     api 'com.squareup.okio:okio'
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin_version}"
     api 'org.jetbrains.kotlinx:kotlinx-coroutines-core'
     implementation 'io.github.microutils:kotlin-logging'
     implementation 'org.slf4j:slf4j-api'
     kaptTest 'com.squareup.moshi:moshi-kotlin-codegen'
-    testImplementation 'junit:junit'
-    testImplementation "org.jetbrains.kotlin:kotlin-test:${kotlin_version}"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testRuntimeOnly 'org.slf4j:slf4j-simple'
+}
+
+test {
+    useJUnitPlatform()
 }
