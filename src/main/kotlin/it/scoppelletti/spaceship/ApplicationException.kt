@@ -29,14 +29,13 @@ import it.scoppelletti.spaceship.i18n.MessageSpec
  */
 public class ApplicationException constructor(
 
-        @Suppress("WeakerAccess")
+        @Suppress("MemberVisibilityCanBePrivate")
         public val messageSpec: MessageSpec,
 
         override val cause: Throwable? = null
 ) : RuntimeException() {
 
-    @Suppress("RedundantNullableReturnType")
-    override val message: String?
+    override val message: String
         get() = toString()
 
     override fun toString(): String = "ApplicationException($messageSpec)"

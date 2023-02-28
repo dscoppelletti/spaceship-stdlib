@@ -120,7 +120,6 @@ class CoroutineSpy(dispatcher: CoroutineDispatcher) : CoroutineScope {
         }
     }
 
-    @Suppress("UNREACHABLE_CODE", "UNUSED_VARIABLE")
     fun parallelFail() = launch(CoroutineName("parallelFail")) {
         println(Thread.currentThread().name)
 
@@ -160,7 +159,7 @@ class CoroutineSpy(dispatcher: CoroutineDispatcher) : CoroutineScope {
         }
     }
 
-    @Suppress("UNREACHABLE_CODE", "UNUSED_VARIABLE")
+    @Suppress("UNUSED_VARIABLE")
     fun parallelCancel() = launch(CoroutineName("parallelCancel")) {
         println(Thread.currentThread().name)
 
@@ -186,8 +185,6 @@ class CoroutineSpy(dispatcher: CoroutineDispatcher) : CoroutineScope {
                 }
 
                 throw CancellationException("MyCancel")
-                d1.await()
-                d2.await()
             }
         } catch (ex: CancellationException) {
             logger.debug("Coroutine cancelled.", ex)

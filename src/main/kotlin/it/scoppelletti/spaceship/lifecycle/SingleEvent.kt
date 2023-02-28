@@ -39,7 +39,7 @@ package it.scoppelletti.spaceship.lifecycle
  */
 public class SingleEvent<out T>(private val content: T) {
 
-    @Suppress("WeakerAccess")
+    @Suppress("MemberVisibilityCanBePrivate")
     public var hasBeenHandled: Boolean = false
         private set
 

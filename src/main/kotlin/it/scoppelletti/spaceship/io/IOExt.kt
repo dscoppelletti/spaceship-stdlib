@@ -71,7 +71,6 @@ public fun <T : Closeable> T.closeQuietly(): T? {
  * @since         1.0.0
  */
 @Throws(IOException::class)
-@Suppress("BlockingMethodInNonBlockingContext")
 public suspend fun copy(
         source: Source,
         sink: Sink,

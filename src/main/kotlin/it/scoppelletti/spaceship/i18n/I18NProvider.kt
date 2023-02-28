@@ -61,7 +61,6 @@ public interface I18NProvider {
      * @param  groupingUsed   Whether grouping will be used in the converter.
      * @return                The object.
      */
-    @Suppress("unused")
     public fun currencyConverter(
             fractionDigits: Int? = null,
             groupingUsed: Boolean? = null

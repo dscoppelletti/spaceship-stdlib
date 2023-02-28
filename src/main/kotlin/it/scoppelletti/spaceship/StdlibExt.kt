@@ -21,7 +21,6 @@ package it.scoppelletti.spaceship
  *
  * @since 1.0.0
  */
-@Suppress("unused")
 public object StdlibExt {
 
     /**
