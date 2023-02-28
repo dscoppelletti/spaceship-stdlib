@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("unused")
-
 package it.scoppelletti.spaceship.http
 
 public object HttpStatus {

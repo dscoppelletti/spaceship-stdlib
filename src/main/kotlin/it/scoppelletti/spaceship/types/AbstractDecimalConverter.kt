@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("JoinDeclarationAndAssignment")
-
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.I18NProvider
@@ -87,10 +85,9 @@ public abstract class AbstractDecimalConverter protected constructor(
     }
 
     private fun createFormat(): NumberFormat {
-        val numberFmt: NumberFormat
         val decimalFmt: DecimalFormat
 
-        numberFmt = NumberFormat.getNumberInstance(
+        val numberFmt = NumberFormat.getNumberInstance(
                 i18nProvider.currentLocale()).apply {
             if (fractionDigitsFixed == null) {
                 maximumFractionDigits = defaultFractionDigits(this)

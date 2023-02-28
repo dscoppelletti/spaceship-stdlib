@@ -1,5 +1,3 @@
-@file:Suppress("JoinDeclarationAndAssignment")
-
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.StubI18NProvider
@@ -31,6 +29,7 @@ class DateConverterTest {
 
     @Test
     fun parse() {
+        @Suppress("JoinDeclarationAndAssignment")
         var date: LocalDate?
 
         assertNull(dateConverter.parse(null), "null")

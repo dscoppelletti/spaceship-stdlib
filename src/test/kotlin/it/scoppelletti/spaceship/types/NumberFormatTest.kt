@@ -1,5 +1,3 @@
-@file:Suppress("JoinDeclarationAndAssignment")
-
 package it.scoppelletti.spaceship.types
 
 import java.text.DecimalFormat
@@ -19,6 +17,7 @@ class NumberFormatTest {
     }
 
     private fun Locale.print() {
+        @Suppress("JoinDeclarationAndAssignment")
         var fmt: NumberFormat
 
         println("# Locale=${this.displayName}")

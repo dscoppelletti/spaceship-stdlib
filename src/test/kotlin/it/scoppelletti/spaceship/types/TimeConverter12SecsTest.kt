@@ -1,5 +1,3 @@
-@file:Suppress("JoinDeclarationAndAssignment")
-
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.StubI18NProvider
@@ -23,6 +21,7 @@ class TimeConverter12SecsTest {
 
     @Test
     fun format() {
+        @Suppress("JoinDeclarationAndAssignment")
         var time: LocalTime
 
         assertNull(timeConverter.format(null), "null")
@@ -36,6 +35,7 @@ class TimeConverter12SecsTest {
 
     @Test
     fun parse() {
+        @Suppress("JoinDeclarationAndAssignment")
         var time: LocalTime?
 
         assertNull(timeConverter.parse(null), "null")

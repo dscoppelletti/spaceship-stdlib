@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("JoinDeclarationAndAssignment", "unused")
-
 package it.scoppelletti.spaceship.json
 
 import com.squareup.moshi.JsonAdapter
@@ -42,14 +40,13 @@ public class DecimalAdapter(
 ) : JsonAdapter<BigDecimal>() {
 
     override fun fromJson(reader: JsonReader): BigDecimal? {
-        val value: String
         val x: BigDecimal
 
         if (reader.peek() == JsonReader.Token.NULL) {
             return reader.nextNull()
         }
 
-        value = reader.nextString()
+        val value = reader.nextString()
         if (value.isBlank()) {
             return null
         }

@@ -1,5 +1,3 @@
-@file:Suppress("JoinDeclarationAndAssignment")
-
 package it.scoppelletti.spaceship.types
 
 import it.scoppelletti.spaceship.i18n.StubI18NProvider
@@ -24,6 +22,7 @@ class DecimalConverter0NoGroupingTest {
 
     @Test
     fun format() {
+        @Suppress("JoinDeclarationAndAssignment")
         var x: BigDecimal
 
         assertNull(decimalConverter.format(null), "null")
@@ -40,7 +39,10 @@ class DecimalConverter0NoGroupingTest {
 
     @Test
     fun parse() {
+        @Suppress("JoinDeclarationAndAssignment")
         var actual: BigDecimal?
+
+        @Suppress("JoinDeclarationAndAssignment")
         var expected: BigDecimal
 
         assertNull(decimalConverter.parse(null), "null")

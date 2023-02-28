@@ -1,5 +1,3 @@
-@file:Suppress("JoinDeclarationAndAssignment")
-
 package it.scoppelletti.spaceship.json
 
 import com.squareup.moshi.JsonAdapter
@@ -44,9 +42,8 @@ class JsonAdapterTest {
     @Test
     fun deserializeMissing() {
         val json = "{\"lastName\":\"Doe\"}"
-        val data: UserData?
 
-        data = adapter.fromJson(json)
+        val data = adapter.fromJson(json)
         assertEquals("Doe", data?.lastName, "lastName=Doe")
         assertNull(data?.firstName, "firstName=null")
     }
@@ -54,9 +51,8 @@ class JsonAdapterTest {
     @Test
     fun deserializeNull() {
         val json = "{\"lastName\":\"Doe\",\"firstName\":null}"
-        val data: UserData?
 
-        data = adapter.fromJson(json)
+        val data = adapter.fromJson(json)
         assertEquals("Doe", data?.lastName, "lastName=Doe")
         assertNull(data?.firstName, "firstName=null")
     }
@@ -74,9 +70,8 @@ class JsonAdapterTest {
     @Test
     fun defaultNull() {
         val json = "null"
-        val data: UserData?
 
-        data = adapter.fromJson(json)
+        val data = adapter.fromJson(json)
         assertNull(data)
     }
 
@@ -93,9 +88,8 @@ class JsonAdapterTest {
     @Test
     fun nullSafe() {
         val json = "null"
-        val data: UserData?
 
-        data = adapter.nullSafe().fromJson(json)
+        val data = adapter.nullSafe().fromJson(json)
         assertNull(data)
     }
 }

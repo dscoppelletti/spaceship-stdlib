@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-@file:Suppress("JoinDeclarationAndAssignment", "unused")
-
 package it.scoppelletti.spaceship.http
 
 import okhttp3.Headers
 import okhttp3.Interceptor
-import okhttp3.Request
 import okhttp3.Response
 
 /**
@@ -39,9 +36,7 @@ public class HeadersInterceptor(headers: Headers) : Interceptor {
     }
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        val builder: Request.Builder
-
-        builder = chain.request().newBuilder()
+        val builder = chain.request().newBuilder()
 
         map.forEach { (name, values) ->
             values.forEach { value ->

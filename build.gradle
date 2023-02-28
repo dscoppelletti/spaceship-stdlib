@@ -61,6 +61,7 @@ repositories {
 configurations {
     bom
     api.extendsFrom(bom)
+    kapt.extendsFrom(bom)
     ksp.extendsFrom(bom)
 }
 
@@ -68,7 +69,7 @@ dependencies {
     bom platform(KOTLIN_BOM)
     bom platform(SPACESHIP_BOM)
     api 'com.google.dagger:dagger'
-    ksp 'com.google.dagger:dagger-compiler'
+    kapt 'com.google.dagger:dagger-compiler'
     api 'com.squareup.moshi:moshi'
     ksp 'com.squareup.moshi:moshi-kotlin-codegen'
     api 'com.squareup.okhttp3:okhttp'
