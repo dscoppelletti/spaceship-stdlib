@@ -26,7 +26,7 @@ public object HttpHeader {
     /**
      * Header containing the client application name and version.
      */
-    public const val APPL: String = "scoppelletti-appl"
+    public const val APPL: String = "X-Scoppelletti-Appl"
 
     /**
      * Header `Authorization`.
@@ -46,12 +46,12 @@ public object HttpHeader {
     /**
      * Header containing the client OS name and version.
      */
-    public const val OS: String = "scoppelletti-os"
+    public const val OS: String = "X-Scoppelletti-OS"
 
     /**
      * Header containing the client timezone.
      */
-    public const val TIMEZONE: String = "scoppelletti-Timezone-IANA"
+    public const val TIMEZONE: String = "X-Scoppelletti-Timezone"
 
     /**
      * Sets the header `Content-Type` to the media-type `application/json`.
