@@ -1,35 +1,13 @@
-buildscript {
-    ext.kotlin_version = '1.8.0'
-    ext.KOTLIN_BOM = "org.jetbrains.kotlin:kotlin-bom:${kotlin_version}"
-    ext.SPACESHIP_BOM = 'it.scoppelletti.spaceship:spaceship-bom:1.1.0'
-
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-
-        if (project.hasProperty('it.scoppelletti.spaceship.repository.url')) {
-            maven {
-                url project.property('it.scoppelletti.spaceship.repository.url')
-            }
-        }
-    }
-    dependencies {
-        classpath platform(KOTLIN_BOM)
-        classpath platform(SPACESHIP_BOM)
-        classpath 'it.scoppelletti.spaceship:spaceship-gradle'
-    }
-}
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
-    id 'java-gradle-plugin'
+    id 'java-library'
     id 'maven-publish'
-    id 'com.github.ben-manes.versions' version '0.46.0'
-    id 'com.google.devtools.ksp' version '1.8.0-1.0.8'
-    id 'org.jetbrains.dokka' version '1.7.20'
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.dokka)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.versions)
+    alias(libs.plugins.spaceship.java.lib)
 }
-
-apply plugin: 'it.scoppelletti.spaceship.java-library'
 
 group 'it.scoppelletti.spaceship'
 version '1.1.0'
@@ -47,29 +25,16 @@ kotlin {
     jvmToolchain(8)
 }
 
-repositories {
-    mavenCentral()
-    google()
-
-    if (project.hasProperty('it.scoppelletti.spaceship.repository.url')) {
-        maven {
-            url project.property('it.scoppelletti.spaceship.repository.url')
-        }
-    }
-}
-
 configurations {
     bom
     api.extendsFrom(bom)
-    kapt.extendsFrom(bom)
     ksp.extendsFrom(bom)
 }
 
 dependencies {
-    bom platform(KOTLIN_BOM)
-    bom platform(SPACESHIP_BOM)
+    bom platform(libs.bom.kotlin)
+    bom platform(libs.bom.spaceship)
     api 'com.google.dagger:dagger'
-    kapt 'com.google.dagger:dagger-compiler'
     api 'com.squareup.moshi:moshi'
     ksp 'com.squareup.moshi:moshi-kotlin-codegen'
     api 'com.squareup.okhttp3:okhttp'
