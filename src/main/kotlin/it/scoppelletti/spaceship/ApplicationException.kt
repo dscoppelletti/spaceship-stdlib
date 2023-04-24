@@ -25,7 +25,7 @@ import it.scoppelletti.spaceship.i18n.MessageSpec
  *
  * @property messageSpec Message specification.
  */
-public class ApplicationException constructor(
+public class ApplicationException(
 
         @Suppress("MemberVisibilityCanBePrivate")
         public val messageSpec: MessageSpec,
