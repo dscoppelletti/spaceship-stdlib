@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 plugins {
     id 'java-library'
@@ -14,15 +16,23 @@ version '1.1.0'
 description 'Spaceship Standard Library'
 archivesBaseName = 'spaceship-stdlib'
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+kotlin {
+    explicitApi()
+}
+
+tasks.withType(KotlinCompilationTask).configureEach {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_1_8
+    }
+}
+
 spaceship {
     url = 'http://github.com/dscoppelletti/spaceship-stdlib'
     scmUrl = 'git@github.com:dscoppelletti/spaceship-stdlib.git'
     inceptionYear = '2017-2021'
-}
-
-kotlin {
-    explicitApi()
-    jvmToolchain(17)
 }
 
 configurations {
